@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FigmaWork</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body id="main">
+    <div class="hero">
+        <div class="hero_block__accounting">
+            <h1 class="header">ОБЩАЯ ВЫРУЧКА</h1>
+            <div class="accounting">
+
+                <div class="block_accounting border_true">
+                    <h1 class="accounting_header">ОБЩЕЕ ОПЛАЧЕНО</h1>
+                    <h2 class="accounting_price">1 123 500 ₽ </h2>
+                </div>
+
+                <div class="block_accounting border_true">
+                    <div class="container">
+                        <span class="accounting_clips color_purple"></span>
+                        <h1 class="accounting_header">ДЕНЬГИ ЗА МЯСО</h1>
+                    </div>
+                    <h2 class="accounting_price">145 200 ₽ </h2>
+                </div>
+
+                <div class="block_accounting border_true">
+                    <div class="container">
+                        <span class="accounting_clips color_blu"></span>
+                        <h1 class="accounting_header">РАСХОДЫ НА ЗП</h1>
+                    </div>
+                    <h2 class="accounting_price">1 223 500 ₽ </h2>
+                </div>
+
+                <div class="block_accounting">
+                    <div class="container">
+                        <span class="accounting_clips color_sky"></span>
+                        <h1 class="accounting_header">ПРОЧЕЕ</h1>
+                    </div>
+                    <h2 class="accounting_price">23 500 ₽ </h2>
+                </div>
+
+            </div>
+        </div>
+        <div id="container_chart">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+
+    body{
+        margin: 0;
+        padding: 2%;
+        background-color: #1b1b1e
+    }
+
+    .header{
+        font-size: 18px;
+        color: #FFFFFF;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: Inter,serif;
+    }
+
+    .hero_block__accounting{
+        display: grid;
+        position: relative;
+        gap: 34px
+    }
+
+    .accounting{
+        display: flex;
+        gap: 12px
+    }
+
+    .block_accounting{
+        display: grid;
+        position: relative;
+        gap: 16px;
+        width: 179px;
+    }
+
+    .container{
+        display: flex;
+        gap: 8px
+    }
+
+    .accounting_header{
+        color: #93969C;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: Inter,serif
+    }
+
+    .accounting_price{
+        font-size: 24px;
+        color: #FFFFFF;
+        font-family: Inter,serif;
+        font-weight: 400;
+        line-height: 32px
+    }
+
+    .accounting_clips{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #container_chart{
+        width: 1080px;
+        height: 500px;
+        transform: translateX(-7%)
+    }
+</style>
