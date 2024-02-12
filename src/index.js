@@ -1,66 +1,34 @@
 import * as echarts from 'echarts';
 import 'echarts-gl';
+import option_one from "./modules/chart_one";
+import option_two from "./modules/chart_two";
 
-const parts = [
-    [70, 180, 70, 25, 100, 170, 195, 140, 120, 80, 120, 170],
-    [90, 190, 105, 90, 60, 100, 220, 45, 20, 100, 100, 100],
-    [140, 30, 25, 80, 120, 130, 85, 50, 30, 70, 140, 130],
-]
+let chart_one = echarts.init(document.getElementById('container_chart_one'))
+let chart_two = echarts.init(document.getElementById('container_chart_two'))
+chart_one.setOption(option_one)
+chart_two.setOption(option_two)
 
-const data = [12, 34, 45, 115, 180]
+let button_one = document.getElementsByClassName('button_one')
+let button_two =    document.getElementsByClassName('button_two')
 
-const series = ['forTheMeat', 'ExpensesForThePO', 'Other'].map((name, sid) => {
-    return {
-        name,
-        type: 'bar',
-        stack: 'total',
-        data: parts[sid].map((item, index) => {return item})
-    };
-});
+let chart_1 = document.getElementsByClassName('hero_chart__one')
+let chart_2 = document.getElementsByClassName('hero_chart__two')
 
-const calculator = (function () {
-    let res = [];
-    for (let i = 0; i < parts[0].length; i++) {
-        let sum = 0
-        for (let j = 0; j < parts.length; j++)
-        sum += parts[j][i]
-        res.push(sum)
-        sum = 0
-    }
-    return res;
-})();
+let show = true
 
-console.log(calculator)
+console.log(chart_1)
 
-series.push(Object({
-    name: 'Dynamic Line',
-    type: 'line',
-    smooth: 0.5,
-    symbol: 'none',
-    data: calculator.map(i => i / 1.5),
-    lineStyle: {
-        color: '#C6EC92',
-        width: 2
-    },
-    markLine: {
-        symbol: ['none', 'none'],
-        label: { show: false },
-    },
-}))
+button_one[0].onclick = function () {
+    button_two[0].setAttribute('class', 'button_two')
+    button_one[0].setAttribute('class', 'button_one activity')
+    chart_2[0].style.display = 'none'
+    chart_1[0].style.display = 'block'
+}
 
-let chart = echarts.init(document.getElementById('container_chart'))
-chart.setOption({
-    color: [
-        '#9747FF',
-        '#0077F7',
-        '#13D6FF',
-    ],
-    xAxis: {
-        type: 'category',
-        data: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series
-})
+button_two[0].onclick = function () {
+    button_one[0].setAttribute('class', 'button_one')
+    button_two[0].setAttribute('class', 'button_two activity')
+    chart_1[0].style.display = 'none'
+    chart_2[0].style.display = 'block'
+}
+

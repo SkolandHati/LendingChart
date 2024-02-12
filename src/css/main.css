@@ -6,6 +6,30 @@ h2{
     margin: 0
 }
 
+h3 {
+    margin: 0;
+}
+
+.font{
+    font-family: Inter,serif;
+}
+
+.text_color_white{
+    color: #FFFFFF;
+}
+
+.text_color_gray{
+    color: #71717A;
+}
+
+.back_color_gray{
+    background-color: #383941;
+}
+
+.back_color{
+    background-color: #272B33;
+}
+
 .color_blu {
     background-color: #0077F7
 }

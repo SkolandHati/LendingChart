@@ -9,46 +9,113 @@
 </head>
 
 <body id="main">
-    <div class="hero">
-        <div class="hero_block__accounting">
-            <h1 class="header">ОБЩАЯ ВЫРУЧКА</h1>
-            <div class="accounting">
 
-                <div class="block_accounting border_true">
-                    <h1 class="accounting_header">ОБЩЕЕ ОПЛАЧЕНО</h1>
-                    <h2 class="accounting_price">1 123 500 ₽ </h2>
-                </div>
+    <div class="main_box">
 
-                <div class="block_accounting border_true">
-                    <div class="container">
-                        <span class="accounting_clips color_purple"></span>
-                        <h1 class="accounting_header">ДЕНЬГИ ЗА МЯСО</h1>
+        <div class="box">
+
+            <div class="hero_chart__one">
+                <div class="hero_block__accounting">
+                    <h1 class="header">ОБЩАЯ ВЫРУЧКА</h1>
+                    <div class="accounting">
+
+                        <div class="block_accounting border_true">
+                            <h1 class="accounting_header">ОБЩЕЕ ОПЛАЧЕНО</h1>
+                            <h2 class="accounting_price">1 123 500 ₽ </h2>
+                        </div>
+
+                        <div class="block_accounting border_true">
+                            <div class="container">
+                                <span class="accounting_clips color_purple"></span>
+                                <h1 class="accounting_header">ДЕНЬГИ ЗА МЯСО</h1>
+                            </div>
+                            <h2 class="accounting_price">145 200 ₽ </h2>
+                        </div>
+
+                        <div class="block_accounting border_true">
+                            <div class="container">
+                                <span class="accounting_clips color_blu"></span>
+                                <h1 class="accounting_header">РАСХОДЫ НА ЗП</h1>
+                            </div>
+                            <h2 class="accounting_price">1 223 500 ₽ </h2>
+                        </div>
+
+                        <div class="block_accounting">
+                            <div class="container">
+                                <span class="accounting_clips color_sky"></span>
+                                <h1 class="accounting_header">ПРОЧЕЕ</h1>
+                            </div>
+                            <h2 class="accounting_price">23 500 ₽ </h2>
+                        </div>
+
                     </div>
-                    <h2 class="accounting_price">145 200 ₽ </h2>
                 </div>
 
-                <div class="block_accounting border_true">
-                    <div class="container">
-                        <span class="accounting_clips color_blu"></span>
-                        <h1 class="accounting_header">РАСХОДЫ НА ЗП</h1>
-                    </div>
-                    <h2 class="accounting_price">1 223 500 ₽ </h2>
-                </div>
-
-                <div class="block_accounting">
-                    <div class="container">
-                        <span class="accounting_clips color_sky"></span>
-                        <h1 class="accounting_header">ПРОЧЕЕ</h1>
-                    </div>
-                    <h2 class="accounting_price">23 500 ₽ </h2>
-                </div>
+                <div id="container_chart_one"></div>
 
             </div>
-        </div>
-        <div id="container_chart">
+
+            <div class="hero_chart__two">
+                <div class="hero_block__accounting">
+                    <h1 class="header font">ПРИБЫЛЬ</h1>
+
+                    <div class="accounting_block__buttons">
+                        <button class="click color_blu text_color_white">Все</button>
+                        <button class="click back_color text_color_gray"><span class="accounting_clips color_blu"></span>Продукт 1</button>
+                        <button class="click back_color text_color_gray"><span class="accounting_clips color_sky"></span>Продукт 2</button>
+                    </div>
+
+                    <div class="panel_product">
+
+                        <div class="product_block border_true">
+                            <h3 class="product_header text_color_gray">Продукт 2</h3>
+                            <div class="block">
+                                <h1 class="price font text_color_white">500</h1>
+                                <h2 class="piece font text_color_gray">/2.000</h2>
+                                <div class="block_percentages">
+                                    <div class="block_line">
+                                        <span class="line_one"></span>
+                                        <span class="line_two back_color_gray"></span>
+                                    </div>
+                                    <h3 class="percentages font">26%</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product_block">
+                            <h3 class="product_header text_color_gray">Продукт 2</h3>
+                            <div class="block">
+                                <h1 class="price font text_color_white">500</h1>
+                                <h2 class="piece font text_color_gray">/2.000</h2>
+                                <div class="block_percentages">
+                                    <div class="block_line">
+                                        <span class="line_one"></span>
+                                        <span class="line_two back_color_gray"></span>
+                                    </div>
+                                    <h3 class="percentages font">26%</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="container_chart_two"></div>
+
+            </div>
 
         </div>
+
+
+        <div class="block_buttons">
+
+            <button class="button_one">Макет 1</button>
+            <button class="button_two">Макет 2</button>
+
+        </div>
+
     </div>
+
 </body>
 
 </html>
@@ -58,8 +125,48 @@
     body{
         margin: 0;
         padding: 2%;
-        background-color: #1b1b1e
+        background-color: #1b1b1e;
+        overflow: hidden;
     }
+
+    .block_buttons{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        margin-top: 20%;
+        justify-content: center;
+        top: 50%;
+        position: relative;
+        gap: 20px;
+    }
+
+    .button_one, .button_two{
+        width: 150px;
+        height: 40px;
+        border: 0;
+        border-radius: 2px;
+        background-color: #383941;
+        color: #FFFFFF;
+    }
+
+    .button_one.activity, .button_two.activity{
+        background-color: #248bff;
+    }
+
+    .button_one:hover, .button_two:hover{
+        background-color: #0077F7;
+        cursor: pointer;
+    }
+
+    .main_box{
+        display: flex;
+    }
+
+    .box{
+        display: block;
+    }
+
+    /*1 Charts*/
 
     .header{
         font-size: 18px;
@@ -117,9 +224,124 @@
         margin-right: 0;
     }
 
-    #container_chart{
+    #container_chart_one{
         width: 1080px;
         height: 500px;
         transform: translateX(-7%)
     }
+
+    /*2 Charts*/
+
+    .hero_chart__two{
+        display: none;
+    }
+
+    .hero_block__accounting{
+        display: grid;
+        position: relative;
+        gap: 20px
+    }
+
+    .header{
+        font-size: 18px;
+        color: #FFFFFF;
+        line-height: 20px;
+        font-weight: 500;
+    }
+
+    .accounting_block__buttons{
+        display: flex;
+        gap: 8px;
+    }
+
+    .click{
+        display: flex;
+        font-size: 14px;
+        padding: 10px 16px 8px 16px;
+        height: 36px;
+        border-radius: 4px;
+        border: 0;
+        gap: 8px;
+    }
+
+    .accounting_clips{
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .panel_product{
+        display: flex;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+    .product_block{
+        display: grid;
+        width: 283px;
+        gap: 12px
+    }
+
+    .product_header{
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .block_percentages{
+        display: flex;
+        gap: 16px;
+    }
+
+    .price{
+        font-size: 24px;
+        width: 207px;
+        height: 32px;
+    }
+
+    .piece{
+        font-size: 18px;
+        width: 160px;
+        height: 26px;
+    }
+
+    .block_line{
+        width: 163px;
+        display: flex;
+    }
+
+    .line_one{
+        display: block;
+        width: 70px;
+        height: 2px;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #C6EC92
+    }
+
+    .line_two{
+        width: 163px;
+        height: 2px;
+        border-radius: 2px;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .percentages{
+        font-size: 12px;
+        color: #C6EC92;
+        font-weight: 500;
+    }
+
+    #container_chart_two{
+        width: 1080px;
+        height: 250px;
+        transform: translateX(-6.5%)
+    }
+
 </style>
